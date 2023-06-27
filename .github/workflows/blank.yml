@@ -16,7 +16,7 @@ jobs:
           java-version: '11'
           distribution: 'adopt'
       - name: Grant execute permission for gradlew
-        run: java -jar ./artifacts/app-ibank.jar &
+        run: java -jar artifacts/app-ibank.jar -P:profile=test &
              chmod +x gradlew
       - name: Build with Gradle
-        run: ./gradlew test -D selenide.headless=true
+        run: ./gradlew test -Dselenide.headless=true
